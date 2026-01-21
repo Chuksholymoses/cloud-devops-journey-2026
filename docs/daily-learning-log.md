@@ -65,3 +65,9 @@
 5. **Verification** - Script to check everything
 
 ### 📁 FINAL STRUCTURE:
+
+# In docs/daily-learning-log.md:
+## 2024-01-21
+### Learned: Format differences
+- Bash: For commands
+- Markdown: For documentation
