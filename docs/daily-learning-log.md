@@ -37,3 +37,19 @@
 
 **Next Session Focus:** [What's next]
 **Git Commit:** [Your commit message]
+
+
+## Structure Fix Applied - $(21/01/2026 +%Y-%m-%d)
+
+### Problem:
+- Folders (backups, docs, logs, scripts) incorrectly placed inside 04-career-prep/
+- Script name typo: setup-alises.sh → setup-aliases.sh
+- Bash configuration warning
+
+### Solution:
+1. Moved folders to correct root location
+2. Fixed script names and permissions
+3. Created .bash_profile for Windows Git Bash
+4. Added verification script
+
+### Correct Structure:
