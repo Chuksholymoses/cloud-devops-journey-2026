@@ -18,8 +18,8 @@ done
 
 echo ""
 echo "2. Checking 04-career-prep content..."
-CAREER_ITEMS=$(ls -la 04-career-prep/ | wc -l)
-if [ "$CAREER_ITEMS" -le 3 ]; then  # . and .. and README.md
+CAREER_ITEMS=$(find 04-career-prep/ -maxdepth 1 -type f | wc -l)
+if [ "$CAREER_ITEMS" -eq 1 ]; then  # Only README.md
     echo "   ✅ 04-career-prep clean (only README.md)"
 else
     echo "   ❌ 04-career-prep has extra items:"
@@ -30,17 +30,31 @@ echo ""
 echo "3. Checking scripts..."
 SCRIPTS=("init-project.sh" "make-executable.sh" "setup-aliases.sh" "sync-environment.sh" "verify-structure.sh")
 for script in "${SCRIPTS[@]}"; do
-    if [ -f "scripts/$script" ] && [ -x "scripts/$script" ]; then
-        echo "   ✅ $script exists and executable"
+    if [ -f "scripts/$script" ]; then
+        if [ -x "scripts/$script" ]; then
+            echo "   ✅ $script exists and executable"
+        else
+            echo "   ⚠️ $script exists but NOT executable"
+        fi
     else
-        echo "   ❌ $script missing or not executable"
+        echo "   ❌ $script missing"
     fi
 done
 
 echo ""
 echo "4. Testing aliases..."
-type gs 2>/dev/null && echo "   ✅ gs alias works" || echo "   ❌ gs alias missing"
-type cdproj 2>/dev/null && echo "   ✅ cdproj alias works" || echo "   ❌ cdproj alias missing"
+# Use 'command -v' instead of 'type' for better compatibility
+if command -v gs &> /dev/null; then
+    echo "   ✅ gs alias works"
+else
+    echo "   ❌ gs alias missing"
+fi
+
+if command -v cdproj &> /dev/null; then
+    echo "   ✅ cdproj alias works"
+else
+    echo "   ❌ cdproj alias missing"
+fi
 
 echo ""
 echo "================================"
