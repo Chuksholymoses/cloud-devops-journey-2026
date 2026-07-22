@@ -29,17 +29,12 @@ A **full-stack web application** deployed on a GCP VM that tracks visitors, stor
 
 | Feature | Description |
 |---------|-------------|
-| **Visitor Counter** | Tracks total visitors on the homepage |
-| **Sign-In System** | Users can submit their name |
-| **Visitor List** | Displays all visitors with timestamps |
-| **Search Functionality** | Find visitors by name (case-insensitive) |
-| **Responsive Design** | Clean, modern UI with custom CSS |
-![Home Page](adding my contact on gcp python web/home.png)
-![Home Page](my first python web from GCP/home.png)
-![Home Page](python about page on gcp/home.png)
-![Home Page](python visitor signin on gcp/home.png)
-![Home Page](python visitors list on gcp/home.png)
-![Home Page](testing the search button of the python web app on gcp/home.png)
+![Home Page](screenshots/home.png)
+![Sign-In Page](screenshots/signin.png)
+![About Page](screenshots/about.png)
+![Visitors List](screenshots/visitors.png)
+![Visitor List](screenshots/visitor-list.png)
+![Search Results](screenshots/search.png)
 ### Technology Stack
 
 | Layer | Technology |
@@ -54,3 +49,5 @@ A **full-stack web application** deployed on a GCP VM that tracks visitors, stor
 | **Version Control** | Git, GitHub |
 
 ### Architecture Diagram
+## 📂 Repository Structure
+
